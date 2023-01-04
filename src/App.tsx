@@ -8,6 +8,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import NoteLayout from "./NoteLayout";
 
 import NewNote from "./components/NewNote";
+import Note from "./components/Note";
 import NoteList from "./components/NoteList";
 
 import useLocalStorage from "./hook/useLocalStorage";
@@ -80,7 +81,7 @@ function App() {
           }
         />
         <Route path="/:id" element={<NoteLayout notes={notesWithTags}/>}>
-          <Route index element={<h1>Show</h1>} />
+          <Route index element={<Note/>} />
           <Route path="edit" element={<h1>Edit</h1>} />
         </Route>
         <Route path="*" element={<Navigate to="/" />} />
